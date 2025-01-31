@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Downloader</title>
+
+    <!-- Evitar cache -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css?v=2">
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="container">
+        <h1 class="title">YouTube Downloader</h1>
+
+        <!-- Formulário para Inserir URL -->
+        <form id="youtube-form" class="form">
+            <div>
+                <label for="youtube-url" class="label">Insira o link do YouTube</label>
+                <input 
+                    type="url" 
+                    id="youtube-url" 
+                    placeholder="https://www.youtube.com/watch?v=example" 
+                    class="input"
+                    required
+                >
+            </div>
+
+            <!-- Botão para Verificar URL -->
+            <button type="button" id="check-url" class="button-primary">
+                Verificar Vídeo
+            </button>
+        </form>
+
+        <!-- Espaço para Exibir Informações do Vídeo -->
+        <div id="video-info" class="hidden mt-6">
+            <h2 class="section-title">Informações do Vídeo</h2>
+            <div class="video-info">
+                <img id="video-thumbnail" src="" alt="Thumbnail do vídeo" class="thumbnail">
+                <p id="video-title" class="video-title"></p>
+            </div>
+
+            <!-- Opções de Download -->
+            <div class="mt-4">
+                <h3 class="section-title">Opções de Download</h3>
+
+                <!-- Download de Vídeo -->
+                <div class="option-group">
+                    <label for="video-quality" class="label">Qualidade do Vídeo</label>
+                    <select id="video-quality" class="select"></select>
+                    <button class="button-success">Baixar Vídeo</button>
+                </div>
+
+                <!-- Download de Áudio -->
+                <div class="option-group">
+                    <label for="audio-format" class="label">Formato do Áudio</label>
+                    <select id="audio-format" class="select"></select>
+                    <button class="button-success">Baixar Áudio</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
